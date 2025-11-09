@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Site José</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #282a36; /* Roxo Drácula */
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }/* Marca d'água */ .marca { position: absolute; bottom: 10px; right: 10px; font-size: 22px; font-weight: bold; opacity: 0.5; animation: rgb 3s infinite linear; }
+
+@keyframes rgb { 0% { color: red; } 33% { color: lime; } 66% { color: cyan; } 100% { color: red; } }
+
+#container { text-align: center; }
+
+button { padding: 10px 20px; font-size: 20px; margin: 10px; cursor: pointer; border-radius: 8px; border: none; }
+
+#nao { position: absolute; }
+
+#tela2 { display: none; font-size: 30px; font-weight: bold; } </style>
+
+</head>
+<body><div id="tela1">
+  <h1>José você é gay?</h1>
+  <button id="sim">Sim</button>
+  <button id="nao">Não</button>
+</div><div id="tela2">
+  <p>EU JÁ SABIA KKKKKKKKKK</p>
+</div><div class="marca">Rai Glitch</div><script>
+  const btnNao = document.getElementById("nao");
+  const btnSim = document.getElementById("sim");
+  const tela1 = document.getElementById("tela1");
+  const tela2 = document.getElementById("tela2");
+
+  btnNao.addEventListener("mouseover", () => {
+    const largura = window.innerWidth - 100;
+    const altura = window.innerHeight - 50;
+
+    const x = Math.random() * largura;
+    const y = Math.random() * altura;
+
+    btnNao.style.left = x + "px";
+    btnNao.style.top = y + "px";
+  });
+
+  btnSim.addEventListener("click", () => {
+    tela1.style.display = "none";
+    tela2.style.display = "flex";
+  });
+</script></body>
+</html>
